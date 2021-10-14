@@ -6,8 +6,17 @@ class ParamsGamesController < ApplicationController
   end
 
   def number_guess
-    number = rand(1..100)
-    input_value = params["number_guess"]
-    render json: { message: "The mumber is #{number}, the number you chose is, #{input_value}!" }
+    number = 36
+    input_value = params["number_guess"].to_i
+
+    if input_value == number
+      output_message = "Your number is the winning number!"
+    elsif number < input_value
+      output_message = "Your number is too high."
+    elsif number > input_value
+      output_message = "Your number is too low."
+    end
+
+    render json: { message: output_message }
   end
 end
