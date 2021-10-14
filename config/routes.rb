@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/guess_number" => "params_games#number_guess"
   get "/numbers:variable_one/:variable_2" => "params_games#numbers"
   get "guess_query/:wildcard" => "params_games#guess_query"
+  get "/number_guess" => "params_games#guess_query"
 end

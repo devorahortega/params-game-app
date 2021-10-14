@@ -1,0 +1,4 @@
+POST http://localhost:3000/number_guess.json
+Content-Type: application/json
+
+{"wildcard": 36 }
